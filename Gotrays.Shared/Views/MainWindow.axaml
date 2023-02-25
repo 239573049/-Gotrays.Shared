@@ -23,9 +23,11 @@
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
     <StackPanel>
-        <view:TitleBar />
+        <view:TitleBar Name="TitleBar" Title="粘贴板共享"/>
         <WrapPanel>
-            <TabControl TabStripPlacement="Left">
+            <TabControl 
+                Grid.Row="1"
+                TabStripPlacement="Left">
                 <TabItem Header="首页">
                     <pages:Home></pages:Home>
                 </TabItem>

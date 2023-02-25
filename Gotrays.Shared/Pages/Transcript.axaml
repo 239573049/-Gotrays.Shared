@@ -9,18 +9,19 @@
     <Design.DataContext>
         <viewModels:TranscriptViewModel/>
     </Design.DataContext>
-    
-    <ListBox Width="300" Margin="20" Items="{Binding Transcripts}">
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <Border 
-                    ToolTip.Tip="{Binding Prompt}"
-                    Classes="Shadow" 
-                    Theme="{StaticResource CardBorder}">
-                    <TextBlock Text="{Binding Content}"></TextBlock>
-                </Border>
-            </DataTemplate>
-        </ListBox.ItemTemplate>
-    </ListBox>
-    
+    <StackPanel>
+        <ListBox MaxHeight="380" Width="300" Margin="20" Items="{Binding Transcripts}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border 
+                        ToolTip.Tip="{Binding Prompt}"
+                        Classes="Shadow" 
+                        Theme="{StaticResource CardBorder}">
+                        <TextBlock Text="{Binding Content}"></TextBlock>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Margin="10" Name="Create" Click="Create_OnClick">新增</Button>
+    </StackPanel>
 </UserControl>

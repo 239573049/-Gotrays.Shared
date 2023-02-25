@@ -1,6 +1,11 @@
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
 using Gotrays.ViewModels;
 using Gotrays.Views;
 
@@ -25,4 +30,5 @@ public partial class App : Application
 
         base.OnFrameworkInitializationCompleted();
     }
+
 }

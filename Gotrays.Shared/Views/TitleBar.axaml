@@ -14,7 +14,7 @@
     
     <Grid Height="25">
         <WrapPanel Margin="2">
-            <TextBlock FontWeight="Bold">粘贴板共享</TextBlock>
+            <TextBlock FontWeight="Bold" Text="{Binding Title}"></TextBlock>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Right" >
             <ToggleSwitch
