@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Gotrays.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:Gotrays.Views"
+        xmlns:pages="clr-namespace:Gotrays.Pages"
+        xmlns:viewModels="clr-namespace:Gotrays.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Gotrays.Views.MainWindow"
+        Height="500"
+        Width="400"
+        MaxHeight="500"
+        MaxWidth="400"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        Icon="/Assets/avalonia-logo.ico"
+        Name="mainWindow"
+        Title="Gotrays">
+
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+    <StackPanel>
+        <view:TitleBar />
+        <WrapPanel>
+            <TabControl TabStripPlacement="Left">
+                <TabItem Header="首页">
+                    <pages:Home></pages:Home>
+                </TabItem>
+                <TabItem Header="文字记录">
+                    <pages:Transcript DataContext="{Binding TranscriptViewModel}"></pages:Transcript>
+                </TabItem>
+                <TabItem Header="图片记录">
+                    <pages:ImageRecords></pages:ImageRecords>
+                </TabItem>
+                <TabItem Header="设置">
+                    <pages:Setting DataContext="{Binding SettingViewModel}"></pages:Setting>
+                </TabItem>
+            </TabControl>
+        </WrapPanel>
+    </StackPanel>
+</Window>

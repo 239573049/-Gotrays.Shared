@@ -1,0 +1,44 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Gotrays.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Name="SettingUserControl"
+             x:Class="Gotrays.Pages.Setting">
+    
+    <Design.DataContext>
+        <viewModels:SettingViewModel/>
+    </Design.DataContext>
+    
+    <RelativePanel Margin="5">
+        <TextBlock
+            Classes="H3 Success"
+            Theme="{StaticResource TitleTextBlock}"
+            RelativePanel.AlignTopWithPanel="True"
+            RelativePanel.AlignHorizontalCenterWithPanel="True" 
+            >
+            基本设置
+        </TextBlock>
+        <TextBox Width="200" 
+                 Height="30"
+                 Margin="35"
+                 RelativePanel.AlignTopWithPanel="True"
+                 RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                 Text="{Binding TranscriptLongest}"
+                 InnerLeftContent="文字最大记录" />
+        <TextBox Width="200" 
+                 Height="30"
+                 Margin="70"
+                 RelativePanel.AlignTopWithPanel="True"
+                 RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                 Text="{Binding ImageRecordsLongest}"
+                 InnerLeftContent="图片最大记录" />
+        
+        <Button Classes="Primary" 
+                RelativePanel.AlignTopWithPanel="True"
+                RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                Width="100" 
+                Theme="{DynamicResource BorderlessButton}" Margin="105">保存</Button>
+    </RelativePanel>
+</UserControl>
